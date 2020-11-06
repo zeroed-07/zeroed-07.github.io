@@ -86,32 +86,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="unity-��ѧ-1"><a href="#unity-��ѧ-1" class="headerlink" title=" unity ��ѧ(1) "></a><center> unity ��ѧ(1) </center></h1><h4 id="�����˵�һ����ª����Ϸ-yes��"><a href="#�����˵�һ����ª����Ϸ-yes��" class="headerlink" title=" �����˵�һ����ª����Ϸ      yes��"></a><center> �����˵�һ����ª����Ϸ      yes��</h4><p>�������쿴���˵�һ��unity�̳̣����Ž̳�д��һ��<del>�����ª��</del>��ש����Ϸ�������˽���unity������Ϸ�ķ����벽�裻����֮�⣬�˽���һ��unity���������ڣ��ܽ�һ�¡�  </p>
+        <h1 id="unity-初学-1"><a href="#unity-初学-1" class="headerlink" title=" unity 初学(1) "></a><center> unity 初学(1) </center></h1><h4 id="做出了第一个简陋的游戏-yes！"><a href="#做出了第一个简陋的游戏-yes！" class="headerlink" title=" 做出了第一个简陋的游戏      yes！"></a><center> 做出了第一个简陋的游戏      yes！</h4><p>　　今天看完了第一个unity教程，对着教程写了一个<del>极其简陋的</del>打砖块游戏，初步了解了unity制作游戏的方法与步骤；除此之外，了解了一下unity的生命周期，总结一下。  </p>
 <ul>
-<li><p>�����˽⵽�ģ�unity��Ϸ����</p>
+<li><p>（已了解到的）unity游戏制作</p>
 <ul>
-<li>�����  <ul>
-<li>ģ��<br>���Ⱦ���Ҫ get ������Ҫ�õ�<strong>3d object</strong>��������ֻ���õ���unity���Դ���object�����Ե����Ǻ��鷳�������м�����Ҫע�⣺  <blockquote>
-<p>������Ĳ�����<br>Q W E R T ��Ӧ�Ĺ���:<br>�ƶ��������ƶ����壬��ת���壬�ı������scale����UI���<br>pivot point �� center point ������</p>
+<li>场景搭建  <ul>
+<li>模型<br>首先就是要 get 到所有要用的<strong>3d object</strong>，今天我只是用到了unity里自带的object，所以倒不是很麻烦，不过有几个点要注意：  <blockquote>
+<p>对物体的操作：<br>Q W E R T 对应的功能:<br>移动场景，移动物体，旋转物体，改变物体的scale，与UI相关<br>pivot point 和 center point 的区别</p>
 </blockquote>
 </li>
-<li>camera��λ����light�İڷ�λ��</li>
+<li>camera的位置与light的摆放位置</li>
 </ul>
 </li>
-<li>����c#�ű�����<br>ע�⣬��Щ���뱾��Ҳ����Ϊ���ڵ�<strong>object</strong>��**<em>component**</em></li>
+<li>添加c#脚本代码<br>注意，这些代码本身也是作为所在的<strong>object</strong>的**<em>component**</em></li>
 </ul>
 </li>
-<li><p>unity�е���������  </p>
+<li><p>unity中的生命周期  </p>
 <blockquote>
-<p>Awake()�������¼�����Ϸһ��ʼ���о�ִ�У�ִֻ��һ�Ρ�<br>Start()����ʼ�¼���ִ��һ�Ρ�<br>Update()�������¼���ִ��N�Σ�ÿִ֡��һ�Ρ�<br>LateUpdate()���Ժ�����¼���ִ��N�Σ��� Update() �¼�ִ����Ϻ���ִ�С�<br>OnGUI()��GUI��Ⱦ�¼���ִ��N�Σ�ִ�еĴ����� Update() �¼���������<br>FixedUpdate()���̶������¼���ִ��N�Σ�0.02��ִ��һ�Ρ��������������صĸ��¶�������¼��д�����  </p>
+<p>Awake()：唤醒事件，游戏一开始运行就执行，只执行一次。<br>Start()：开始事件，执行一次。<br>Update()：更新事件，执行N次，每帧执行一次。<br>LateUpdate()：稍后更新事件，执行N次，在 Update() 事件执行完毕后再执行。<br>OnGUI()：GUI渲染事件，执行N次，执行的次数是 Update() 事件的两倍。<br>FixedUpdate()：固定更新事件，执行N次，0.02秒执行一次。所有物理组件相关的更新都在这个事件中处理。  </p>
 </blockquote>
 <blockquote>
-<p>OnEnable()�������¼���ִֻ��һ�Ρ����ű���������õ�ʱ��ִ��һ�Ρ�<br>OnDisable()�������¼���ִ��һ�Ρ��� OnDestroy() �¼�ǰִ�С����ߵ��ýű�����������á���Ҳ�ᴥ�����¼���<br>OnDestroy()�������¼���ִ��һ�Ρ����ű������ص���Ϸ���屻����ʱִ�С�  </p>
+<p>OnEnable()：启用事件，只执行一次。当脚本组件被启用的时候执行一次。<br>OnDisable()：禁用事件，执行一次。在 OnDestroy() 事件前执行。或者当该脚本组件被“禁用”后，也会触发该事件。<br>OnDestroy()：销毁事件，执行一次。当脚本所挂载的游戏物体被销毁时执行。  </p>
 </blockquote>
-<p>  ����һ��ͼ��</p>
+<p>  附上一张图：</p>
 </li>
 </ul>
-<pre><code>���������ô�࣬�о�ͦ��~~�����ǱȽϺĸ�~~  
+<pre><code>大体就是这么多，感觉挺好~~但就是比较耗肝~~  
 Thanks.</code></pre>
 
       
